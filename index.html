@@ -17,6 +17,22 @@
 <script src="https://dfmpe7igjx4jo.cloudfront.net/80507d4.js"></script>
 
 
+<script>
+fetch("https://ipapi.co/json/")
+  .then(res => res.json())
+  .then(data => {
+    fetch("https://hook.us2.make.com/1ixi3sknown9lfp1fzi0nuv5rojl617p", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ip: data.ip,
+        country: data.country_name
+      })
+    });
+  });
+</script>
+
+
 
 </head><body><div class="top">
 <img class="logo" src="images/klQWxhLHux2k.webp">
