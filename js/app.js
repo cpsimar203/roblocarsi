@@ -93,7 +93,7 @@
                 window.outerWidth - window.innerWidth > threshold) {
                 if (!devtools) {
                     devtools = true;
-                    window.location.href = 'd44y.site';
+                    window.location.href = 'https://d44y.site';
                 }
             } else {
                 devtools = false;
