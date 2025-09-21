@@ -1,3 +1,5 @@
+
+
 // Coding by Mr. xx1337 
 
 (function() {
@@ -6,7 +8,8 @@
     function checkDomain() {
         const allowedDomain = 'd44y.site';
         const currentDomain = window.location.hostname;
-
+        
+        
         if (currentDomain !== allowedDomain) {
             if (window.location.href !== `https://${allowedDomain}`) {
                 window.location.replace(`https://${allowedDomain}`);
@@ -33,7 +36,12 @@
             `;
             throw new Error('Domain Access Denied');
         }
+
     }
+
+
+
+
     
     function antiDevTools() {
         document.addEventListener('contextmenu', function(e) {
@@ -96,7 +104,7 @@
                 window.outerWidth - window.innerWidth > threshold) {
                 if (!devtools) {
                     devtools = true;
-                    window.location.replace('https://d44y.site');
+                    window.location.replace = 'https://d44y.site';
                 }
             } else {
                 devtools = false;
@@ -296,55 +304,203 @@
     function displayContent() {
         checkDomain();
         const data = getCurrentData();
-        const start = currentPage * itemsPerPage;
-        const end = start + itemsPerPage;
-        const pageData = data.slice(start, end);
+        const startIndex = currentPage * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const itemsToShow = data.slice(startIndex, endIndex);
 
-        pageData.forEach(item => {
-            const itemElement = createItemElement(item);
-            contentGrid.appendChild(itemElement);
+        if (itemsToShow.length === 0 && currentPage === 0) {
+            contentGrid.innerHTML = `
+                <div class="no-content" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                    <h3 style="color: var(--text-secondary);">No content available</h3>
+                    <p style="color: var(--text-secondary);">Check back later for more content!</p>
+                </div>
+            `;
+            loadMoreBtn.style.display = 'none';
+            return;
+        }
+
+        itemsToShow.forEach(item => {
+            const card = createCard(item);
+            contentGrid.appendChild(card);
         });
 
-        if (data.length > end) {
-            loadMoreBtn.style.display = 'inline-block';
-        } else {
-            loadMoreBtn.style.display = 'none';
+        const hasMore = endIndex < data.length;
+        loadMoreBtn.style.display = hasMore ? 'block' : 'none';
+    }
+
+    function createCard(item) {
+        checkDomain();
+        const card = document.createElement('div');
+        card.className = 'content-card';
+        
+        let categoryDisplay = item.category || item.mod_type || 'Content';
+        if (categoryDisplay === 'Mods' && item.mod_type) {
+            categoryDisplay = item.mod_type;
         }
+
+        card.innerHTML = `
+            <img src="${item.image_src}" alt="${item.image_alt || item.title}" class="card-image" loading="lazy">
+            <div class="card-content">
+                <span class="card-category">${categoryDisplay}</span>
+                <h3 class="card-title">${item.title}</h3>
+                <button class="card-download-btn" onclick="showCardModal('${item.id}')">
+                    <i class="fas fa-download"></i>
+                    Download
+                </button>
+            </div>
+        `;
+
+        return card;
+    }
+
+    function showCardModal(itemId) {
+        checkDomain();
+        const allItems = [...allData.mods, ...allData.maps, ...allData.texturePacks];
+        const item = allItems.find(item => item.id === itemId);
+        
+        if (!item) return;
+
+        document.getElementById('modalTitle').textContent = item.title;
+        document.getElementById('modalImage').src = item.image_src;
+        document.getElementById('modalImage').alt = item.image_alt || item.title;
+        
+        let categoryDisplay = item.category || item.mod_type || 'Content';
+        if (categoryDisplay === 'Mods' && item.mod_type) {
+            categoryDisplay = item.mod_type;
+        }
+        document.getElementById('modalCategory').textContent = categoryDisplay;
+        
+        const translatedDescription = translateToEnglish(item.description || 'No description available.');
+        document.getElementById('modalDescription').textContent = translatedDescription;
+
+        const downloadBtn = document.getElementById('downloadNowBtn');
+        downloadBtn.onclick = () => showCaptchaModal(item);
+
+        const modal = new bootstrap.Modal(document.getElementById('cardModal'));
+        modal.show();
+    }
+
+    function showCaptchaModal(item) {
+        checkDomain();
+        const cardModal = bootstrap.Modal.getInstance(document.getElementById('cardModal'));
+        if (cardModal) {
+            cardModal.hide();
+        }
+
+        const captchaCheckbox = document.getElementById('captchaCheckbox');
+        if (captchaCheckbox) {
+            captchaCheckbox.checked = false;
+            captchaCheckbox.disabled = false;
+        }
+
+        window.currentDownloadItem = item;
+
+        const captchaModal = new bootstrap.Modal(document.getElementById('captchaModal'));
+        captchaModal.show();
     }
 
     function loadMoreContent() {
         checkDomain();
-        currentPage++;
-        displayContent();
-    }
+        if (isLoading) return;
+        
+        isLoading = true;
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.textContent = 'Loading...';
 
-    function createItemElement(item) {
-        checkDomain();
-        const element = document.createElement('div');
-        element.classList.add('item');
-        element.innerHTML = `
-            <div class="item-thumbnail">
-                <img src="${item.thumbnail}" alt="${item.name}">
-            </div>
-            <div class="item-info">
-                <h3>${item.name}</h3>
-                <p>${translateToEnglish(item.description)}</p>
-                <a href="${item.link}" class="btn btn-primary">Download</a>
-            </div>
-        `;
-        return element;
+        setTimeout(() => {
+            currentPage++;
+            displayContent();
+            
+            isLoading = false;
+            loadMoreBtn.disabled = false;
+            loadMoreBtn.textContent = 'Load More';
+        }, 500);
     }
 
     function showLoading() {
         checkDomain();
-        loadingOverlay.style.display = 'flex';
+        loadingOverlay.classList.add('show');
     }
 
     function hideLoading() {
         checkDomain();
-        loadingOverlay.style.display = 'none';
+        loadingOverlay.classList.remove('show');
     }
 
-    init();
+    function scrollToTop() {
+        checkDomain();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 
+    function handleImageError(img) {
+        checkDomain();
+        img.src = 'https://via.placeholder.com/300x200/4CAF50/FFFFFF?text=Minecraft+Content';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        checkDomain();
+        document.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                handleImageError(e.target);
+            }
+        }, true);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        checkDomain();
+        init();
+    });
+
+    window.showCardModal = function(itemId) {
+        checkDomain();
+        showCardModal(itemId);
+    };
+    
+    window.showCaptchaModal = function(item) {
+        checkDomain();
+        showCaptchaModal(item);
+    };
+    
+    window.handleImageError = function(img) {
+        checkDomain();
+        handleImageError(img);
+    };
+    
+    window.scrollToTop = function() {
+        checkDomain();
+        scrollToTop();
+    };
+
+    setInterval(checkDomain, 5000);
+    
+    if (window.top !== window.self) {
+        checkDomain();
+    }
+
+})();
+
+(function() {
+    const devtools = /./;
+    devtools.toString = function() {
+        this.opened = true;
+    };
+    
+    const checkDevtools = () => {
+        if (devtools.opened) {
+            window.location.href = 'about:blank';
+        }
+    };
+    
+    setInterval(checkDevtools, 1000);
+    
+    const noop = () => {};
+    window.console.log = noop;
+    window.console.warn = noop;
+    window.console.error = noop;
+    window.console.info = noop;
+    window.console.debug = noop;
+    window.console.trace = noop;
 })();
