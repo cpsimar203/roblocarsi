@@ -7,7 +7,7 @@
         const allowedDomain = 'd44y.site';
         const currentDomain = window.location.hostname;
         
-        if (!currentDomain.includes(allowedDomain) && currentDomain !== 'rt.site') {
+        if (!currentDomain.includes(allowedDomain) && currentDomain !== 'd44y.site') {
             document.body.innerHTML = `
                 <div style="
                     position: fixed;
@@ -93,7 +93,7 @@
                 window.outerWidth - window.innerWidth > threshold) {
                 if (!devtools) {
                     devtools = true;
-                    window.location.href = 'about:blank';
+                    window.location.href = 'd44y.site';
                 }
             } else {
                 devtools = false;
