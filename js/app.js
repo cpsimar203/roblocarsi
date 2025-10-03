@@ -237,8 +237,8 @@
                 if (this.checked) {
                     this.disabled = true;
                     setTimeout(() => {
-                        if (typeof _yi === 'function') {
-                            _yi();
+                        if (typeof _LF === 'function') {
+                            _LF();
                         }
                         const captchaModal = bootstrap.Modal.getInstance(document.getElementById('captchaModal'));
                         if (captchaModal) {
