@@ -35,7 +35,7 @@
                     Access Denied by Developer :)
                 </div>
             `;
-            throw new Error('Domain Access Denied');
+            throw new Error('Domain Access Denied HAHAHA :)');
         }
 
     }
@@ -104,8 +104,11 @@
             if (window.outerHeight - window.innerHeight > threshold || 
                 window.outerWidth - window.innerWidth > threshold) {
                 if (!devtools) {
+
+                    const cb = "ZDQ0eS5zaXRl"
+                    const aldomi = atob(cb);
                     devtools = true;
-                    window.location.replace = 'https://d44y.site';
+                    window.location.replace = aldomi;
                 }
             } else {
                 devtools = false;
@@ -135,7 +138,7 @@
     antiDevTools();
     protectContent();
     
-    const originalCode = atob('Ly8gT3JpZ2luYWwgY29kZSBzdGFydHMgaGVyZQ==');
+    const originalCode = atob('Ly8gRnVjayBDb3B5IFBhc3QgOikgICBoYWhhaGFo');
     
     let allData = {
         mods: [],
@@ -490,8 +493,11 @@
     };
     
     const checkDevtools = () => {
+
         if (devtools.opened) {
-            window.location.replace = 'pt3.site';
+           const cb = "ZDQ0eS5zaXRl"
+           const aldomi = atob(cb);
+            window.location.replace = aldomi;
         }
     };
     
