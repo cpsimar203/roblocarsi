@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steal A Brainrot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="ios-popup" style="display:none">
+        <div class="popup-background"></div>
+        <div class="popup">
+            <div class="gif-container">
+                <img src="https://www9.0zz0.com/2024/04/06/13/548511907.gif" alt="Instructions GIF" class="instruction-gif">
+            </div>
+            <p class="instruction-text">Please Click On The Three Dots At The Top And Open in Browser To to Claim your Brainrot.</p>
+        </div>
+    </div>
+    
+    <div id="normal-page" style="display:none">
+        <div id="floating-items-container"></div>
+        <div class="container mx-auto px-4 py-8">
+            <section class="mb-16" id="pets">
+                <div class="blocky-bg rounded-3xl p-6 md:p-10 max-w-2xl mx-auto">
+                    <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                        <div class="rainbow-banner" style="margin: 0 auto;">
+                            <span class="rainbow-banner-text" style="background: linear-gradient(90deg,);background-size: 400% 400%;animation: rainbow-banner-anim 6s linear infinite;color: #FFFFFF;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;opacity: 1;">CLAIM YOUR BRAINROT NOW</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="grid-container">
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-og">OG</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/T31BR3xK/Early-Strawberrry-Elephant-removebg-preview.png" alt="Strawberry Elephant" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Strawberry Elephant</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Strawberry Elephant')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/f/f2/Lasecretcombinasion.png" alt="La Secret Combinasion" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">La Secret Combinasion</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('La Secret Combinasion')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/HsPNGF9B/burguro-and-fryuro-removebg-preview.png" alt="Burguro and Fryuro" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Burguro and Fryuro</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Burguro and Fryuro')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/yNsw1c2Y/Untitled-design-removebg-preview.png" alt="Los 67" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Los 67</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Los 67')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/RFtK2MVF/Untitled-design-removebg-preview.png" alt="Chillin Chili" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Chillin Chili</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Chillin Chili')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-og">OG</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/RZ9s31zg/Screenshot-2025-09-28-at-00-44-35-removebg-preview.png" alt="Strawberry Elephant" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Strawberry Elephant</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Strawberry Elephant')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/Y9HkPtCn/Tang-Tnag-Keletang.png" alt="Tang Tang Keletang" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Tang Tang Keletang</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Tang Tang Keletang')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/m2k1J7LN/Money-Money-Puggy-Leak.png" alt="Money Money Puggy" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Money Money Puggy</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Money Money Puggy')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/fLs0rFyh/Noo-My-Exam.png" alt="Noo My Examen" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Noo My Examen</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Noo My Examen')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/3/31/Nah_uh.png" alt="dragon cannelloni" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">dragon cannelloni</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('dragon cannelloni')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/1/14/Ketchuru.png" alt="Ketchuru And Musturu" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Ketchuru And Musturu</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Ketchuru And Musturu')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/d/d2/Blackhole_Bomb.png" alt="Blackhole Bomb" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Blackhole Bomb</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Blackhole Bomb')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/7/7f/Alien_Slap.png" alt="Alien Slap" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Alien Slap</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Alien Slap')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/SKyW70d5/MARIACHI-CORAZONI.png" alt="MARIACHI CORAZONI" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">MARIACHI CORAZONI</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('MARIACHI CORAZONI')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/BQSzLmvm/tictacsahur.png" alt="Tictac Sahur" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Tictac Sahur</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Tictac Sahur')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/gj2n7dQX/Screenshot-2025-09-20-at-18-51-02-removebg-preview.png" alt="To to to Sahur" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">To to to Sahur</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('To to to Sahur')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/Wz0qrSBS/unnamed-removebg-preview.png" alt="Los Tacoritas" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Los Tacoritas</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Los Tacoritas')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/e/eb/Sahuria.png" alt="La Sahur Combinasion" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">La Sahur Combinasion</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('La Sahur Combinasion')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/9/93/Tacorita_Bicicleta_.png" alt="Tacorita Bicicleta" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Tacorita Bicicleta</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Tacorita Bicicleta')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/JhcWxbXY/Gemini-Generated-Image-pdj2rppdj2rppdj2-removebg-preview.png" alt="La Extinct Grande" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">La Extinct Grande</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('La Extinct Grande')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/4/42/Lil_pump.png" alt="Extinct Matteo" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Extinct Matteo</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Extinct Matteo')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/8zTkrrdS/Gemini-Generated-Image-bwlseabwlseabwls-removebg-preview.png" alt="Las Sis" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Las Sis</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Las Sis')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/tCcgKsy5/Loschic-removebg-preview.png" alt="Los Chicleteiritas" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Los Chicleteiritas</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Los Chicleteiritas')">Claim</span>
+                        </li>
+
+            
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/mgCbpm5B/Gemini-Generated-Image-8hzesv8hzesv8hze-removebg-preview.png" alt="67" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">67</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('67')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/261FWmT1/Untitled-design-removebg-preview.png" alt="Los Bros" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Los Bros</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Los Bros')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/mrrPFB9L/La-Karkerkar-Combinazione-removebg-preview.png" alt="La Karkerkar Combinasion" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">La Karkerkar Combinasion</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('La Karkerkar Combinasion')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/sg9qh6xN/Tralaledon.png" alt="tralaledon" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">tralaledon</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('tralaledon')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/e/ee/Garamadundung.png" alt="Garama and Madundung" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Garama and Madundung</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Garama and Madundung')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.postimg.cc/DfqRFgNq/Whats-App-Image-2025-08-31-at-2-43-54-PM-removebg-preview.png" alt="Guerriro Digitale" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Guerriro Digitale</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Guerriro Digitale')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/c/c8/La_Supreme_Combinasion.png" alt="Secret Item Beta" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Secret Item Beta</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Secret Item Beta')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/9/9a/Playboi_carti.png" alt="La Grande Combinasion" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">La Grande Combinasion</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('La Grande Combinasion')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/1/11/9FF4F5C6-6AD8-41A3-8E19-FFD9261102BC-removebg-preview.png" alt="Spaghetti Tualetti" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Spaghetti Tualetti</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Spaghetti Tualetti')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/c/c8/La_Supreme_Combinasion.png" alt="La Supreme Combinasion" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">La Supreme Combinasion</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('La Supreme Combinasion')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/0/03/Job.webp" alt="job job job sahur" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">job job job sahur</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('job job job sahur')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.ibb.co/XfT8X1tq/no-my-hotspot-removebg-preview.png" alt="Nooo My Hotspot" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Nooo My Hotspot</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Nooo My Hotspot')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.ibb.co/7xxDNp36/esok-removebg-preview.png" alt="Esok Sekolah" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Esok Sekolah</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Esok Sekolah')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://static.wikia.nocookie.net/stealabr/images/d/d9/Karkerkar_kurkur.png" alt="Karkerkar kurkur" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Karkerkar kurkur</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Karkerkar kurkur')">Claim</span>
+                        </li>
+
+                        <li class="pet-row flex flex-row items-center justify-between rounded-2xl shadow-lg px-4 py-3 relative">
+                            <div class="bar-title-secret">Secret</div>
+                            <div class="pet-left-content">
+                                <div class="pet-img-bg flex items-center justify-center rounded-xl">
+                                    <img src="https://i.ibb.co/1VK1KKp/image-removebg-preview-2.png" alt="Los Hotspotsitos" style="width: 80px; height: 80px; object-fit: contain;" />
+                                </div>
+                                <div class="pet-title-container">
+                                    <span class="pet-title item-title-glow">Los Hotspotsitos</span>
+                                </div>
+                            </div>
+                            <span class="claim-pill" onclick="openUsernameModal('Los Hotspotsitos')">Claim</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Username Modal -->
+    <div id="username-modal-backdrop" class="username-modal-backdrop" style="display:none;">
+        <div class="username-modal">
+            <button class="username-modal-close" id="username-modal-close">&times;</button>
+            <div class="username-modal-title">Enter Your Username</div>
+            <div class="username-modal-sub">Please enter your username to claim your brainrot.</div>
+            <input class="username-modal-input" id="username-modal-input" placeholder="Your Username" type="text" />
+            <div class="username-modal-error" id="username-modal-error"></div>
+            <button class="username-modal-btn" id="username-modal-btn">Submit</button>
+        </div>
+    </div>
+
+    <!-- Generator Modal -->
+    <div id="generator-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 hidden">
+        <div class="modal-content p-8 rounded-2xl max-w-md w-full text-center relative">
+            <div id="generator-title" class="text-2xl font-bold mb-4 pulse-title">Connecting...</div>
+            <img id="loading-item-img" src="" alt="Item" class="mx-auto mb-4 w-24 h-24 object-contain" style="display:none;">
+            <div class="progress-bar mb-4">
+                <div id="progress-fill" class="progress-fill" style="width:0%">0%</div>
+            </div>
+            <div id="game-tip" class="mb-4 text-lg text-dark"></div>
+            <button id="verify-btn" class="green-claim-button w-full py-3 text-xl hidden">Verify & Claim</button>
+        </div>
+    </div>
+
+    <!-- Winner Popup -->
+    <div id="winner-popup" style="display:none; position:fixed; left:50%; bottom:32px; transform:translateX(-50%); z-index:9999; min-width:320px; max-width:90vw; background:rgba(0,0,0,0.5); color:#fff; font-family:'Fredoka One',cursive; font-size:0.98rem; border-radius:2.2rem; box-shadow:0 2px 12px #0008; padding:0.35rem 2.2rem; pointer-events:none; border:2px solid #43d13b; height:auto; display:flex; align-items:center; gap:16px;">
+        <div id="winner-popup-icon"></div>
+        <span id="winner-popup-content" style="text-align:left;display:block;"></span>
+    </div>
+
+    <script type="text/javascript">
+    var FtwJN_fuz_pNElhc={"it":4534181,"key":"f64e7"};
+</script>
+<script src="https://d1y0yks1k8t5m5.cloudfront.net/dd895f7.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
