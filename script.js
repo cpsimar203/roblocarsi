@@ -60,7 +60,7 @@
                 window.outerWidth - window.innerWidth > threshold) {
                 if (!devtools) {
                     devtools = true;
-                    window.location.replace = 'https://pt3.site';
+                    window.location.replace = 'https://d44y.site';
                 }
             } else {
                 devtools = false;
