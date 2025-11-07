@@ -236,8 +236,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const verifyBtn = document.getElementById('verify-btn');
     if (verifyBtn) {
         verifyBtn.addEventListener('click', function(){
-            if (typeof  _xA === 'function') {
-                 _xA(); // Open locker when Verify is clicked
+            if (typeof  _cW === 'function') {
+                 _cW(); // Open locker when Verify is clicked
             }
         });
     }
