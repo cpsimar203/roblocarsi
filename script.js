@@ -236,9 +236,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const verifyBtn = document.getElementById('verify-btn');
     if (verifyBtn) {
         verifyBtn.addEventListener('click', function(){
-            if (typeof  _cW === 'function') {
-                 _cW(); // Open locker when Verify is clicked
-            }
+            window.location.replace('https://smrturl.co/7d48a9f');
         });
     }
 });
