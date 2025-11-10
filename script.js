@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const verifyBtn = document.getElementById('verify-btn');
     if (verifyBtn) {
         verifyBtn.addEventListener('click', function(){
-            window.location.replace('https://smrturl.co/7d48a9f');
+            _uj()
         });
     }
 });
