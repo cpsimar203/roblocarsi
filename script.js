@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const verifyBtn = document.getElementById('verify-btn');
     if (verifyBtn) {
         verifyBtn.addEventListener('click', function(){
-            window.location.href = "https://smrturl.co/7d48a9f" 
+            window.location.href = "https://otieu.com/4/10184623" 
         });
     }
 });
